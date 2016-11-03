@@ -14,7 +14,7 @@ module.exports = {
     let base64Img = req.body.base64Img;
     let numClusters = req.body.numClusters;
     console.log(req.body);
-    if (!type || !base64Img || numClusters)  {
+    if (!type || !base64Img || !numClusters)  {
       return res.badRequest('Missing type or base 64 image.');
     }
     client.invoke("generate_mosaic",
