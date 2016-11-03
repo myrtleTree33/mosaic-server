@@ -25,10 +25,9 @@ module.exports = {
       function(err, outputBase64ImgStr, more) {
         console.log('success! --');
         console.log(type);
-        console.log(outputBase64ImgStr.toString('base64'));
         res.status(200).json({
 					type: type,
-					base64Img:outputBase64ImgStr,
+					base64Img:outputBase64ImgStr.toString('base64'),
           numClusters: numClusters
         });
       });
