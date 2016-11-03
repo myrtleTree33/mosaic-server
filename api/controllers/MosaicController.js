@@ -13,7 +13,6 @@ module.exports = {
     let type = req.body.type;
     let base64Img = req.body.base64Img;
     let numClusters = req.body.numClusters;
-    console.log(req.body);
     if (!type || !base64Img || !numClusters)  {
       return res.badRequest('Missing type or base 64 image.');
     }
@@ -24,6 +23,10 @@ module.exports = {
       12,
 			type,
       function(err, outputBase64ImgStr, more) {
+        console.log('success! --');
+        console.log(type);
+        console.log(numClusters);
+        console.log(outputBase64ImgStr.substr(10));
         res.status(200).json({
 					type: type,
 					base64Img:outputBase64ImgStr,
