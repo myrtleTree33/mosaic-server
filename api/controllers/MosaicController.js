@@ -27,7 +27,7 @@ module.exports = {
         console.log(type);
         res.status(200).json({
 					type: type,
-					base64Img:outputBase64ImgStr.toString('base64'),
+					base64Img:outputBase64ImgStr.toString('ascii'),
           numClusters: numClusters
         });
       });
